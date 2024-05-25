@@ -1,0 +1,36 @@
+﻿  Building 'SelfProtect' with toolset 'WindowsKernelModeDriver10.0' and the 'Universal' target platform.
+  Stamping x64\Debug\SelfProtect.inf
+  Stamping [Version] section with DriverVer=05/09/2024,12.42.45.14
+  hide.c
+H:\Users\DH\桌面\毕设\process\SelfProtect\SelfProtect\hide.c(30,25): warning C4047: “==”:“ULONG”与“void *”的间接级别不同
+  main.c
+H:\Users\DH\桌面\毕设\process\SelfProtect\SelfProtect\main.c(36,44): warning C4996: 'ExAllocatePool': 被声明为已否决
+H:\Users\DH\桌面\毕设\process\SelfProtect\SelfProtect\main.c(64,27): warning C4242: “=”: 从“DWORD64”转换到“int”，可能丢失数据
+H:\Users\DH\桌面\毕设\process\SelfProtect\SelfProtect\main.c(86,24): warning C4242: “=”: 从“DWORD64”转换到“int”，可能丢失数据
+H:\Users\DH\桌面\毕设\process\SelfProtect\SelfProtect\main.c(101,51): warning C4242: “函数”: 从“ULONG64”转换到“ULONG”，可能丢失数据
+H:\Users\DH\桌面\毕设\process\SelfProtect\SelfProtect\main.c(158,29): warning C4047: “=”:“ULONG64”与“void *”的间接级别不同
+H:\Users\DH\桌面\毕设\process\SelfProtect\SelfProtect\main.c(159,59): warning C4242: “函数”: 从“ULONG64”转换到“ULONG”，可能丢失数据
+  protect.c
+H:\Users\DH\桌面\毕设\process\SelfProtect\SelfProtect\protect.c(5,8): warning C4100: “RegistrationContext”: 未引用的形参
+  uilt.c
+H:\Users\DH\桌面\毕设\process\SelfProtect\SelfProtect\uilt.c(89,21): warning C4101: “imageName”: 未引用的局部变量
+  正在生成代码...
+  SelfProtect.vcxproj -> H:\Users\DH\桌面\毕设\process\SelfProtect\x64\Debug\SelfProtect.sys
+  Done Adding Additional Store
+  Successfully signed: H:\Users\DH\\\process\SelfProtect\x64\Debug\SelfProtect.sys
+  
+  Driver is 'Universal'.
+  ........................
+  Signability test complete.
+  
+  Errors:
+  None
+  
+  Warnings:
+  None
+  
+  Catalog generation complete.
+  H:\Users\DH\桌面\毕设\process\SelfProtect\x64\Debug\SelfProtect\selfprotect.cat
+  Done Adding Additional Store
+  Successfully signed: H:\Users\DH\\\process\SelfProtect\x64\Debug\SelfProtect\selfprotect.cat
+  

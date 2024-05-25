@@ -1,0 +1,8 @@
+﻿cl : 命令行 warning D9025: 正在重写“/sdl”(用“/GS-”)
+  pch.cpp
+cl : 命令行 warning D9025: 正在重写“/sdl”(用“/GS-”)
+  dllmain.cpp
+H:\Users\DH\桌面\毕设\process\MyHookDll\MyHookDll\dllmain.cpp(64,61): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+H:\Users\DH\桌面\毕设\process\MyHookDll\MyHookDll\dllmain.cpp(74,5): warning C4996: 'wcscat': This function or variable may be unsafe. Consider using wcscat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+    正在创建库 H:\Users\DH\桌面\毕设\process\MyHookDll\x64\Debug\MyHookDll.lib 和对象 H:\Users\DH\桌面\毕设\process\MyHookDll\x64\Debug\MyHookDll.exp
+  MyHookDll.vcxproj -> H:\Users\DH\桌面\毕设\process\MyHookDll\x64\Debug\MyHookDll.dll

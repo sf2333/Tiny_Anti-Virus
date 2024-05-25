@@ -1,0 +1,6 @@
+﻿cl : 命令行 warning D9025: 正在重写“/sdl”(用“/GS-”)
+  pch.cpp
+cl : 命令行 warning D9025: 正在重写“/sdl”(用“/GS-”)
+  dllmain.cpp
+    正在创建库 H:\Users\DH\桌面\毕设\process\sysinstaller\x64\Debug\sysinstaller.lib 和对象 H:\Users\DH\桌面\毕设\process\sysinstaller\x64\Debug\sysinstaller.exp
+  sysinstaller.vcxproj -> H:\Users\DH\桌面\毕设\process\sysinstaller\x64\Debug\sysinstaller.dll

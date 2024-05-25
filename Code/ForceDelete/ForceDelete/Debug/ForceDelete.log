@@ -1,0 +1,20 @@
+﻿  Building 'ForceDelete' with toolset 'WindowsKernelModeDriver10.0' and the 'Universal' target platform.
+  Stamping Debug\ForceDelete.inf
+  Stamping [Version] section with DriverVer=04/11/2024,22.7.43.860
+  main.cpp
+H:\Users\DH\桌面\毕设\process\ForceDelete\ForceDelete\lyshark.h(194,1): warning C4005: “STATUS_INFO_LENGTH_MISMATCH”: 宏重定义
+D:\Windows Kits\10\Include\10.0.19041.0\shared\ntstatus.h(2021): message : 参见“STATUS_INFO_LENGTH_MISMATCH”的前一个定义
+H:\Users\DH\桌面\毕设\process\ForceDelete\ForceDelete\main.cpp(67,30): warning C4100: “driver”: 未引用的形参
+H:\Users\DH\桌面\毕设\process\ForceDelete\ForceDelete\main.cpp(154,41): warning C4996: 'ExAllocatePool': 被声明为已否决
+H:\Users\DH\桌面\毕设\process\ForceDelete\ForceDelete\main.cpp(72,64): warning C4100: “RegistryPath”: 未引用的形参
+main.obj : error LNK2019: 无法解析的外部符号 "__declspec(dllimport) long __stdcall ObSetHandleAttributes(void *,struct _OBJECT_HANDLE_FLAG_INFORMATION *,char)" (__imp_?ObSetHandleAttributes@@YGJPAXPAU_OBJECT_HANDLE_FLAG_INFORMATION@@D@Z)，函数 "void __stdcall ForceCloseHandle(struct _EPROCESS *,unsigned __int64)" (?ForceCloseHandle@@YGXPAU_EPROCESS@@_K@Z) 中引用了该符号
+main.obj : error LNK2019: 无法解析的外部符号 "__declspec(dllimport) void __stdcall KeStackAttachProcess(struct _EPROCESS *,struct _KAPC_STATE *)" (__imp_?KeStackAttachProcess@@YGXPAU_EPROCESS@@PAU_KAPC_STATE@@@Z)，函数 "void __stdcall ForceCloseHandle(struct _EPROCESS *,unsigned __int64)" (?ForceCloseHandle@@YGXPAU_EPROCESS@@_K@Z) 中引用了该符号
+main.obj : error LNK2019: 无法解析的外部符号 "__declspec(dllimport) void __stdcall KeUnstackDetachProcess(struct _KAPC_STATE *)" (__imp_?KeUnstackDetachProcess@@YGXPAU_KAPC_STATE@@@Z)，函数 "void __stdcall ForceCloseHandle(struct _EPROCESS *,unsigned __int64)" (?ForceCloseHandle@@YGXPAU_EPROCESS@@_K@Z) 中引用了该符号
+main.obj : error LNK2019: 无法解析的外部符号 "__declspec(dllimport) long __stdcall PsLookupProcessByProcessId(void *,struct _EPROCESS * *)" (__imp_?PsLookupProcessByProcessId@@YGJPAXPAPAU_EPROCESS@@@Z)，函数 "struct _EPROCESS * __stdcall LookupProcess(void *)" (?LookupProcess@@YGPAU_EPROCESS@@PAX@Z) 中引用了该符号
+main.obj : error LNK2019: 无法解析的外部符号 "__declspec(dllimport) long __stdcall ZwQueryObject(void *,unsigned long,void *,unsigned long,unsigned long *)" (__imp_?ZwQueryObject@@YGJPAXK0KPAK@Z)，函数 "long __stdcall DriverEntry(struct _DRIVER_OBJECT *,struct _UNICODE_STRING *)" (?DriverEntry@@YGJPAU_DRIVER_OBJECT@@PAU_UNICODE_STRING@@@Z) 中引用了该符号
+main.obj : error LNK2019: 无法解析的外部符号 "__declspec(dllimport) long __stdcall ZwQuerySystemInformation(unsigned long,void *,unsigned long,unsigned long *)" (__imp_?ZwQuerySystemInformation@@YGJKPAXKPAK@Z)，函数 "long __stdcall DriverEntry(struct _DRIVER_OBJECT *,struct _UNICODE_STRING *)" (?DriverEntry@@YGJPAU_DRIVER_OBJECT@@PAU_UNICODE_STRING@@@Z) 中引用了该符号
+main.obj : error LNK2019: 无法解析的外部符号 "__declspec(dllimport) long __stdcall ZwDuplicateObject(void *,void *,void *,void * *,unsigned long,unsigned long,unsigned long)" (__imp_?ZwDuplicateObject@@YGJPAX00PAPAXKKK@Z)，函数 "long __stdcall DriverEntry(struct _DRIVER_OBJECT *,struct _UNICODE_STRING *)" (?DriverEntry@@YGJPAU_DRIVER_OBJECT@@PAU_UNICODE_STRING@@@Z) 中引用了该符号
+WdfDriverEntry.lib(stub.obj) : error LNK2019: 无法解析的外部符号 _DriverEntry@8，函数 _FxDriverEntryWorker@8 中引用了该符号
+    已定义且可能匹配的符号上的提示:
+      "long __stdcall DriverEntry(struct _DRIVER_OBJECT *,struct _UNICODE_STRING *)" (?DriverEntry@@YGJPAU_DRIVER_OBJECT@@PAU_UNICODE_STRING@@@Z)
+H:\Users\DH\桌面\毕设\process\ForceDelete\Debug\ForceDelete.sys : fatal error LNK1120: 8 个无法解析的外部命令

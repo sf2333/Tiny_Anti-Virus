@@ -1,0 +1,94 @@
+;;;
+;;; ForceDelete
+;;;
+;;;
+;;; Copyright (c) 1999-2002, Microsoft Corporation
+;;;
+
+[Version]
+Signature   = "$Windows NT$"
+Class       = "ContentScreener"                         ;This is determined by the work this filter driver does
+ClassGuid   = {3e3f0674-c83c-4558-bb26-9820e1eba5c5}    ;This value is determined by the Class
+Provider    = %ProviderString%
+DriverVer   = 04/19/2024,14.50.50.697
+CatalogFile = ForceDelete.cat
+
+
+[DestinationDirs]
+DefaultDestDir          = 12
+ForceDelete.DriverFiles     = 12            ;%windir%\system32\drivers
+
+;;
+;; Default install sections
+;;
+
+[DefaultInstall]
+OptionDesc          = %ServiceDescription%
+CopyFiles           = ForceDelete.DriverFiles
+
+[DefaultInstall.Services]
+AddService          = %ServiceName%,,ForceDelete.Service
+
+;;
+;; Default uninstall sections
+;;
+
+[DefaultUninstall]
+DelFiles            = ForceDelete.DriverFiles
+
+
+
+[DefaultUninstall.Services]
+DelService = ForceDelete,0x200      ;Ensure service is stopped before deleting
+
+;
+; Services Section
+;
+
+[ForceDelete.Service]
+DisplayName      = %ServiceName%
+Description      = %ServiceDescription%
+ServiceBinary    = %12%\%DriverName%.sys        ;%windir%\system32\drivers\
+ServiceType      = 2                            ;SERVICE_FILE_SYSTEM_DRIVER
+StartType        = 3                            ;SERVICE_DEMAND_START
+ErrorControl     = 1                            ;SERVICE_ERROR_NORMAL
+AddReg           = ForceDelete.AddRegistry
+
+;
+; Registry Modifications
+;
+
+[ForceDelete.AddRegistry]
+HKR,,"SupportedFeatures",0x00010001,0x3
+HKR,"Instances","DefaultInstance",0x00000000,%DefaultInstance%
+HKR,"Instances\"%Instance1.Name%,"Flags",0x00010001,%Instance1.Flags%
+
+
+;
+; Copy Files
+;
+
+[ForceDelete.DriverFiles]
+%DriverName%.sys
+
+[SourceDisksFiles]
+ForceDelete.sys = 1,,
+
+[SourceDisksNames]
+1 = %DiskId1%,,,
+
+;;
+;; String Section
+;;
+
+[Strings]
+ProviderString          = "TODO-Set-Provider"
+ServiceDescription      = "ForceDelete driver"
+ServiceName             = "ForceDelete"
+DriverName              = "ForceDelete"
+DiskId1                 = "ForceDelete Device Installation Disk"
+
+;Instances specific information.
+DefaultInstance         = "ForceDelete Instance"
+Instance1.Name          = "ForceDelete Instance"
+Instance1.Flags         = 0x0          ; Allow all attachments

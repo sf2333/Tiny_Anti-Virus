@@ -1,0 +1,23 @@
+﻿  Building 'ProcessBlock' with toolset 'WindowsKernelModeDriver10.0' and the 'Universal' target platform.
+  Stamping x64\Debug\ProcessBlock.inf
+  Stamping [Version] section with DriverVer=04/19/2024,15.49.45.426
+  main.c
+  ProcessBlock.vcxproj -> H:\Users\DH\桌面\毕设\process\ProcessBlock\x64\Debug\ProcessBlock.sys
+  Done Adding Additional Store
+  Successfully signed: H:\Users\DH\\\process\ProcessBlock\x64\Debug\ProcessBlock.sys
+  
+  Driver is 'Universal'.
+  ........................
+  Signability test complete.
+  
+  Errors:
+  None
+  
+  Warnings:
+  None
+  
+  Catalog generation complete.
+  H:\Users\DH\桌面\毕设\process\ProcessBlock\x64\Debug\ProcessBlock\processblock.cat
+  Done Adding Additional Store
+  Successfully signed: H:\Users\DH\\\process\ProcessBlock\x64\Debug\ProcessBlock\processblock.cat
+  

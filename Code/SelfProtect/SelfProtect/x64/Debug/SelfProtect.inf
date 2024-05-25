@@ -1,0 +1,90 @@
+;
+; SelfProtect.inf
+;
+
+[Version]
+Signature="$WINDOWS NT$"
+Class=Sample ; TODO: edit Class
+ClassGuid={78A1C341-4539-11d3-B88D-00C04FAD5171} ; TODO: edit ClassGuid
+Provider=%ManufacturerName%
+CatalogFile=SelfProtect.cat
+DriverVer = 05/09/2024,12.42.45.14
+PnpLockDown=1
+
+[DestinationDirs]
+DefaultDestDir = 12
+SelfProtect_Device_CoInstaller_CopyFiles = 11
+
+; ================= Class section =====================
+
+[ClassInstall32]
+Addreg=SampleClassReg
+
+[SampleClassReg]
+HKR,,,0,%ClassName%
+HKR,,Icon,,-5
+
+[SourceDisksNames]
+1 = %DiskName%,,,""
+
+[SourceDisksFiles]
+SelfProtect.sys  = 1,,
+;
+
+
+;*****************************************
+; Install Section
+;*****************************************
+
+[Manufacturer]
+%ManufacturerName%=Standard,NTamd64
+
+[Standard.NTamd64]
+%SelfProtect.DeviceDesc%=SelfProtect_Device, Root\SelfProtect ; TODO: edit hw-id
+
+[SelfProtect_Device.NT]
+CopyFiles=Drivers_Dir
+
+[Drivers_Dir]
+SelfProtect.sys
+
+;-------------- Service installation
+[SelfProtect_Device.NT.Services]
+AddService = SelfProtect,%SPSVCINST_ASSOCSERVICE%, SelfProtect_Service_Inst
+
+; -------------- SelfProtect driver install sections
+[SelfProtect_Service_Inst]
+DisplayName    = %SelfProtect.SVCDESC%
+ServiceType    = 1               ; SERVICE_KERNEL_DRIVER
+StartType      = 3               ; SERVICE_DEMAND_START
+ErrorControl   = 1               ; SERVICE_ERROR_NORMAL
+ServiceBinary  = %12%\SelfProtect.sys
+
+;
+;--- SelfProtect_Device Coinstaller installation ------
+;
+
+[SelfProtect_Device.NT.CoInstallers]
+AddReg=SelfProtect_Device_CoInstaller_AddReg
+CopyFiles=SelfProtect_Device_CoInstaller_CopyFiles
+
+[SelfProtect_Device_CoInstaller_AddReg]
+;
+
+
+[SelfProtect_Device_CoInstaller_CopyFiles]
+;
+
+
+[SelfProtect_Device.NT.Wdf]
+KmdfService =  SelfProtect, SelfProtect_wdfsect
+[SelfProtect_wdfsect]
+KmdfLibraryVersion = 1.15
+
+[Strings]
+SPSVCINST_ASSOCSERVICE= 0x00000002
+ManufacturerName="<Your manufacturer name>" ;TODO: Replace with your manufacturer name
+ClassName="Samples" ; TODO: edit ClassName
+DiskName = "SelfProtect Installation Disk"
+SelfProtect.DeviceDesc = "SelfProtect Device"
+SelfProtect.SVCDESC = "SelfProtect Service"

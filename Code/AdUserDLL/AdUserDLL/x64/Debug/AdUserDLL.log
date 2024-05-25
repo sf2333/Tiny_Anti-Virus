@@ -1,0 +1,12 @@
+﻿cl : 命令行 warning D9025: 正在重写“/sdl”(用“/GS-”)
+  pch.cpp
+cl : 命令行 warning D9025: 正在重写“/sdl”(用“/GS-”)
+  dllmain.cpp
+H:\Users\DH\桌面\毕设\process\AdUserDLL\AdUserDLL\YaraApiTest.h(25,1): warning C4005: “OUTINFO_2_PARAM”: 宏重定义
+H:\Users\DH\桌面\毕设\process\AdUserDLL\AdUserDLL\ulity.h(10): message : 参见“OUTINFO_2_PARAM”的前一个定义
+H:\Users\DH\桌面\毕设\process\AdUserDLL\AdUserDLL\dllmain.cpp(442,21): warning C4311: “类型强制转换”: 从“HANDLE”到“int”的指针截断
+H:\Users\DH\桌面\毕设\process\AdUserDLL\AdUserDLL\dllmain.cpp(442,21): warning C4302: “类型强制转换”: 从“HANDLE”到“int”截断
+  PathTrans.cpp
+  正在生成代码...
+    正在创建库 H:\Users\DH\桌面\毕设\process\AdUserDLL\x64\Debug\AdUserDLL.lib 和对象 H:\Users\DH\桌面\毕设\process\AdUserDLL\x64\Debug\AdUserDLL.exp
+  AdUserDLL.vcxproj -> H:\Users\DH\桌面\毕设\process\AdUserDLL\x64\Debug\AdUserDLL.dll

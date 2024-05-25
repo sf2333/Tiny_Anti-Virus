@@ -1,0 +1,8 @@
+﻿  pch.cpp
+  dllmain.cpp
+H:\Users\DH\桌面\毕设\process\sysinstaller\sysinstaller\dllmain.cpp(2): warning C4603: “_CRT_SECURE_NO_WARNINGS”: 未定义宏或在预编译头使用后定义发生改变
+H:\Users\DH\桌面\毕设\process\sysinstaller\sysinstaller\dllmain.cpp(2): message : 将宏添加到预编译头中，而不是在此处定义
+H:\Users\DH\桌面\毕设\process\sysinstaller\sysinstaller\dllmain.cpp(4): message : 使用预编译头
+H:\Users\DH\桌面\毕设\process\sysinstaller\sysinstaller\dllmain.cpp(44,3): error C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+H:\Users\DH\桌面\毕设\process\sysinstaller\sysinstaller\dllmain.cpp(45,3): error C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+H:\Users\DH\桌面\毕设\process\sysinstaller\sysinstaller\dllmain.cpp(214,2): error C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.

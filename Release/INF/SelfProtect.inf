@@ -1,0 +1,95 @@
+;;;
+;;; SelfProtect
+;;;
+;;;
+;;; Copyright (c) 1999-2002, Microsoft Corporation
+;;;
+
+[Version]
+Signature   = "$Windows NT$"
+Class       = "ContentScreener"                         ;This is determined by the work this filter driver does
+ClassGuid   = {3e3f0674-c83c-4558-bb26-9820e1eba5c5}    ;This value is determined by the Class
+Provider    = %ProviderString%
+DriverVer   = 04/19/2024,14.50.50.697
+CatalogFile = SelfProtect.cat
+
+
+[DestinationDirs]
+DefaultDestDir          = 12
+SelfProtect.DriverFiles     = 12            ;%windir%\system32\drivers
+
+;;
+;; Default install sections
+;;
+
+[DefaultInstall]
+OptionDesc          = %ServiceDescription%
+CopyFiles           = SelfProtect.DriverFiles
+
+[DefaultInstall.Services]
+AddService          = %ServiceName%,,SelfProtect.Service
+
+;;
+;; Default uninstall sections
+;;
+
+[DefaultUninstall]
+DelFiles            = SelfProtect.DriverFiles
+
+
+
+[DefaultUninstall.Services]
+DelService = SelfProtect,0x200      ;Ensure service is stopped before deleting
+
+;
+; Services Section
+;
+
+[SelfProtect.Service]
+DisplayName      = %ServiceName%
+Description      = %ServiceDescription%
+ServiceBinary    = %12%\%DriverName%.sys        ;%windir%\system32\drivers\
+ServiceType      = 2                            ;SERVICE_FILE_SYSTEM_DRIVER
+StartType        = 3                            ;SERVICE_DEMAND_START
+ErrorControl     = 1                            ;SERVICE_ERROR_NORMAL
+AddReg           = SelfProtect.AddRegistry
+
+;
+; Registry Modifications
+;
+
+[SelfProtect.AddRegistry]
+HKR,,"SupportedFeatures",0x00010001,0x3
+HKR,"Instances","DefaultInstance",0x00000000,%DefaultInstance%
+HKR,"Instances\"%Instance1.Name%,"Flags",0x00010001,%Instance1.Flags%
+HKR,,"Mode",0x00010001,0x0
+HKR,,"Pid",0x00010001,6716
+
+;
+; Copy Files
+;
+
+[SelfProtect.DriverFiles]
+%DriverName%.sys
+
+[SourceDisksFiles]
+SelfProtect.sys = 1,,
+
+[SourceDisksNames]
+1 = %DiskId1%,,,
+
+;;
+;; String Section
+;;
+
+[Strings]
+ProviderString          = "TODO-Set-Provider"
+ServiceDescription      = "SelfProtect driver"
+ServiceName             = "SelfProtect"
+DriverName              = "SelfProtect"
+DiskId1                 = "SelfProtect Device Installation Disk"
+
+;Instances specific information.
+DefaultInstance         = "SelfProtect Instance"
+Instance1.Name          = "SelfProtect Instance"
+Instance1.Flags         = 0x0          ; Allow all attachments

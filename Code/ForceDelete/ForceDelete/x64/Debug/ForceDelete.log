@@ -1,0 +1,37 @@
+﻿  Building 'ForceDelete' with toolset 'WindowsKernelModeDriver10.0' and the 'Universal' target platform.
+  Stamping x64\Debug\ForceDelete.inf
+  Stamping [Version] section with DriverVer=05/14/2024,23.10.21.944
+  main.c
+H:\Users\DH\桌面\毕设\process\ForceDelete\ForceDelete\cleaning.h(193,1): warning C4005: “STATUS_INFO_LENGTH_MISMATCH”: 宏重定义
+D:\Windows Kits\10\Include\10.0.19041.0\shared\ntstatus.h(2021): message : 参见“STATUS_INFO_LENGTH_MISMATCH”的前一个定义
+H:\Users\DH\桌面\毕设\process\ForceDelete\ForceDelete\main.c(34,67): warning C4047: “=”:“HANDLE”与“USHORT”的间接级别不同
+H:\Users\DH\桌面\毕设\process\ForceDelete\ForceDelete\main.c(45,69): warning C4022: “ZwDuplicateObject”: 指针与实参 2 不匹配
+H:\Users\DH\桌面\毕设\process\ForceDelete\ForceDelete\main.c(81,18): warning C4996: 'ExAllocatePool': 被声明为已否决
+H:\Users\DH\桌面\毕设\process\ForceDelete\ForceDelete\main.c(147,51): warning C4047: “=”:“HANDLE”与“USHORT”的间接级别不同
+H:\Users\DH\桌面\毕设\process\ForceDelete\ForceDelete\main.c(149,61): warning C4022: “PsLookupProcessByProcessId”: 指针与实参 1 不匹配
+H:\Users\DH\桌面\毕设\process\ForceDelete\ForceDelete\main.c(194,106): warning C4047: “=”:“NTSTATUS”与“PSYSTEM_HANDLE_INFORMATION”的间接级别不同
+H:\Users\DH\桌面\毕设\process\ForceDelete\ForceDelete\main.c(194,57): warning C4996: 'ExAllocatePool': 被声明为已否决
+H:\Users\DH\桌面\毕设\process\ForceDelete\ForceDelete\main.c(357,51): warning C4100: “DeviceObject”: 未引用的形参
+H:\Users\DH\桌面\毕设\process\ForceDelete\ForceDelete\main.c(455,41): warning C4100: “_pDeviceObject”: 未引用的形参
+H:\Users\DH\桌面\毕设\process\ForceDelete\ForceDelete\main.c(463,33): warning C4100: “device”: 未引用的形参
+H:\Users\DH\桌面\毕设\process\ForceDelete\ForceDelete\main.c(473,32): warning C4100: “device”: 未引用的形参
+H:\Users\DH\桌面\毕设\process\ForceDelete\ForceDelete\main.c(505,17): warning C4101: “deviceObject”: 未引用的局部变量
+  ForceDelete.vcxproj -> H:\Users\DH\桌面\毕设\process\ForceDelete\x64\Debug\ForceDelete.sys
+  Done Adding Additional Store
+  Successfully signed: H:\Users\DH\\\process\ForceDelete\x64\Debug\ForceDelete.sys
+  
+  Driver is 'Universal'.
+  ........................
+  Signability test complete.
+  
+  Errors:
+  None
+  
+  Warnings:
+  None
+  
+  Catalog generation complete.
+  H:\Users\DH\桌面\毕设\process\ForceDelete\x64\Debug\ForceDelete\forcedelete.cat
+  Done Adding Additional Store
+  Successfully signed: H:\Users\DH\\\process\ForceDelete\x64\Debug\ForceDelete\forcedelete.cat
+  

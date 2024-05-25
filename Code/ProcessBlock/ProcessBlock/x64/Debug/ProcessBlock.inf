@@ -1,0 +1,90 @@
+;
+; ProcessBlock.inf
+;
+
+[Version]
+Signature="$WINDOWS NT$"
+Class=Sample ; TODO: edit Class
+ClassGuid={78A1C341-4539-11d3-B88D-00C04FAD5171} ; TODO: edit ClassGuid
+Provider=%ManufacturerName%
+CatalogFile=ProcessBlock.cat
+DriverVer = 04/19/2024,15.49.45.426
+PnpLockDown=1
+
+[DestinationDirs]
+DefaultDestDir = 12
+ProcessBlock_Device_CoInstaller_CopyFiles = 11
+
+; ================= Class section =====================
+
+[ClassInstall32]
+Addreg=SampleClassReg
+
+[SampleClassReg]
+HKR,,,0,%ClassName%
+HKR,,Icon,,-5
+
+[SourceDisksNames]
+1 = %DiskName%,,,""
+
+[SourceDisksFiles]
+ProcessBlock.sys  = 1,,
+;
+
+
+;*****************************************
+; Install Section
+;*****************************************
+
+[Manufacturer]
+%ManufacturerName%=Standard,NTamd64
+
+[Standard.NTamd64]
+%ProcessBlock.DeviceDesc%=ProcessBlock_Device, Root\ProcessBlock ; TODO: edit hw-id
+
+[ProcessBlock_Device.NT]
+CopyFiles=Drivers_Dir
+
+[Drivers_Dir]
+ProcessBlock.sys
+
+;-------------- Service installation
+[ProcessBlock_Device.NT.Services]
+AddService = ProcessBlock,%SPSVCINST_ASSOCSERVICE%, ProcessBlock_Service_Inst
+
+; -------------- ProcessBlock driver install sections
+[ProcessBlock_Service_Inst]
+DisplayName    = %ProcessBlock.SVCDESC%
+ServiceType    = 1               ; SERVICE_KERNEL_DRIVER
+StartType      = 3               ; SERVICE_DEMAND_START
+ErrorControl   = 1               ; SERVICE_ERROR_NORMAL
+ServiceBinary  = %12%\ProcessBlock.sys
+
+;
+;--- ProcessBlock_Device Coinstaller installation ------
+;
+
+[ProcessBlock_Device.NT.CoInstallers]
+AddReg=ProcessBlock_Device_CoInstaller_AddReg
+CopyFiles=ProcessBlock_Device_CoInstaller_CopyFiles
+
+[ProcessBlock_Device_CoInstaller_AddReg]
+;
+
+
+[ProcessBlock_Device_CoInstaller_CopyFiles]
+;
+
+
+[ProcessBlock_Device.NT.Wdf]
+KmdfService =  ProcessBlock, ProcessBlock_wdfsect
+[ProcessBlock_wdfsect]
+KmdfLibraryVersion = 1.15
+
+[Strings]
+SPSVCINST_ASSOCSERVICE= 0x00000002
+ManufacturerName="<Your manufacturer name>" ;TODO: Replace with your manufacturer name
+ClassName="Samples" ; TODO: edit ClassName
+DiskName = "ProcessBlock Installation Disk"
+ProcessBlock.DeviceDesc = "ProcessBlock Device"
+ProcessBlock.SVCDESC = "ProcessBlock Service"
