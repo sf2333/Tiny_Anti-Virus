@@ -24,7 +24,7 @@
 
 ![image-20240525223325491](https://my-tc-1308282641.cos.ap-guangzhou.myqcloud.com/markdown/image-20240525223325491.png)
 
-4、运行Tiny_anti-vruis.exe
+4、以管理员权限启动Tiny_anti-vruis.exe
 
 ## 代码文件Code
 
